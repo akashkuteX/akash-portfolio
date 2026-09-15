@@ -363,6 +363,7 @@ function ExperienceFlow({
 }) {
   return (
     <>
+      {/* MOBILE */}
       <div className="mt-4 grid grid-cols-3 overflow-hidden rounded-[12px] border border-white/10 bg-[#101010] md:hidden">
         {flow.map((step, index) => (
           <div
@@ -386,6 +387,7 @@ function ExperienceFlow({
         ))}
       </div>
 
+      {/* DESKTOP */}
       <div className="mt-4 hidden rounded-[13px] border border-white/10 bg-[#101010] px-4 py-3 md:block xl:mt-5 xl:rounded-[16px] xl:px-5 xl:py-4">
         <div className="grid grid-cols-[1fr_24px_1fr_24px_1fr] items-center gap-3 xl:grid-cols-[1fr_32px_1fr_32px_1fr]">
           {flow.map((step, index) => (
@@ -423,7 +425,7 @@ function ExperienceFlow({
 }
 
 /* =========================================================
-   TOOLBOX CARD
+   TOOLBOX
 ========================================================= */
 
 function ToolboxCard({
@@ -530,8 +532,6 @@ function ProfileCard() {
       <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-orange-500/10 blur-[70px]" />
 
       <div className="relative h-[178px] overflow-hidden rounded-[16px] border border-white/10 bg-[#090909] xl:h-[220px] xl:rounded-[20px] 2xl:h-[232px]">
-        <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-orange-500/25 blur-[45px]" />
-
         <Image
           src="/akash-profile.png"
           alt="Akash Kute"
@@ -631,8 +631,6 @@ function ProfileCard() {
 function MobileProfileCard() {
   return (
     <div className="relative overflow-hidden rounded-[18px] border border-white/10 bg-[#111111] p-3.5 shadow-[0_20px_50px_rgba(0,0,0,0.25)]">
-      <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-orange-500/10 blur-[50px]" />
-
       <div className="relative z-10 flex items-center gap-3">
         <div className="relative h-[74px] w-[74px] shrink-0 overflow-hidden rounded-[13px] border border-white/10 bg-black">
           <Image
@@ -751,7 +749,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen overflow-x-clip bg-[#0b0b0b] text-white">
-      {/* SCROLL PROGRESS */}
+      {/* PROGRESS */}
       <div className="fixed left-0 top-0 z-[100] h-[2px] w-full">
         <div
           className="h-full bg-orange-500"
@@ -759,13 +757,7 @@ export default function Home() {
         />
       </div>
 
-      {/* =====================================================
-          PAGE SHELL
-
-          < md     mobile
-          md       original desktop sizing
-          xl/2xl   larger desktop scaling
-      ====================================================== */}
+      {/* SHELL */}
 
       <div
         className="
@@ -793,7 +785,7 @@ export default function Home() {
           2xl:gap-14
         "
       >
-        {/* DESKTOP PROFILE */}
+        {/* SIDEBAR */}
 
         <aside className="hidden self-start md:sticky md:top-1/2 md:block md:-translate-y-1/2">
           <ProfileCard />
@@ -812,19 +804,7 @@ export default function Home() {
 
           <section
             id="home"
-            className="
-              scroll-mt-6
-              pb-8
-              pt-2
-
-              md:flex
-              md:min-h-[calc(100svh-2.5rem)]
-              md:scroll-mt-8
-              md:flex-col
-              md:justify-center
-              md:pb-0
-              md:pt-0
-            "
+            className="scroll-mt-6 pb-8 pt-2 md:flex md:min-h-[calc(100svh-2.5rem)] md:scroll-mt-8 md:flex-col md:justify-center md:pb-0 md:pt-0"
           >
             <div>
               <h1 className="text-[43px] font-bold uppercase leading-[0.8] tracking-[-0.07em] sm:text-[52px] md:text-[clamp(2.95rem,5.5vw,4.65rem)] xl:text-[5.5rem] 2xl:text-[6rem]">
@@ -841,7 +821,7 @@ export default function Home() {
               reliable distributed software.
             </p>
 
-            {/* HERO METRICS */}
+            {/* METRICS */}
 
             <div className="mt-5 grid grid-cols-2 gap-px overflow-hidden rounded-[13px] border border-white/15 bg-white/10 md:mt-6 md:rounded-[14px] xl:mt-8 xl:rounded-[18px]">
               <div className="bg-[#111111] px-4 py-3 md:px-5 md:py-3.5 xl:px-7 xl:py-5">
@@ -850,7 +830,7 @@ export default function Home() {
                 </p>
 
                 <div className="mt-2 flex items-end justify-between gap-2 xl:mt-3">
-                  <p className="text-[6px] uppercase tracking-[0.15em] text-zinc-300 md:text-[8px] md:tracking-[0.18em] xl:text-[10px]">
+                  <p className="text-[6px] uppercase tracking-[0.15em] text-zinc-300 md:text-[8px] xl:text-[10px]">
                     Clinic sites
                   </p>
 
@@ -866,7 +846,7 @@ export default function Home() {
                 </p>
 
                 <div className="mt-2 flex items-end justify-between gap-2 xl:mt-3">
-                  <p className="text-[6px] uppercase tracking-[0.15em] text-zinc-300 md:text-[8px] md:tracking-[0.18em] xl:text-[10px]">
+                  <p className="text-[6px] uppercase tracking-[0.15em] text-zinc-300 md:text-[8px] xl:text-[10px]">
                     Events / day
                   </p>
 
@@ -877,7 +857,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* HERO CARDS */}
+            {/* FOCUS */}
 
             <div className="mt-2.5 grid grid-cols-1 gap-2.5 sm:grid-cols-2 md:mt-3 md:gap-3 xl:mt-4 xl:gap-4">
               <div className="relative min-h-[90px] overflow-hidden rounded-[14px] bg-[#F25A2B] px-4 py-3.5 text-black md:min-h-[102px] md:rounded-[16px] md:px-[18px] md:py-4 xl:min-h-[135px] xl:rounded-[20px] xl:px-7 xl:py-5">
@@ -923,7 +903,18 @@ export default function Home() {
             {projects.map((project) => (
               <article
                 key={project.number}
-                className="border-b border-white/10 py-7 first:pt-3 md:flex md:min-h-[calc(100svh-8rem)] md:items-start md:py-8 md:pt-10 xl:py-10 xl:pt-12"
+                className="
+                  border-b
+                  border-white/10
+                  py-7
+                  first:pt-3
+
+                  md:flex
+                  md:items-start
+                  md:py-12
+
+                  xl:py-14
+                "
               >
                 <div className="w-full">
                   <div className="grid gap-2.5 md:grid-cols-[30px_minmax(0,1fr)] md:gap-3 xl:grid-cols-[40px_minmax(0,1fr)] xl:gap-4">
@@ -966,7 +957,7 @@ export default function Home() {
                         ))}
                       </div>
 
-                      <div className="mt-4 xl:mt-5">
+                      <div className="mt-4">
                         <ArchitectureDiagram project={project} />
                       </div>
                     </div>
